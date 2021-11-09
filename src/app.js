@@ -1,10 +1,10 @@
 const EXPRESS = require('express')
 const path = require('path');
 const APP = EXPRESS();
-const { routing } = require('./src/routes/index.js');
-const { connection } = require('./src/Db.js')
+const { routing } = require('./routes/index.js');
+const { connection } = require('./Db.js')
 var expressLayouts = require('express-ejs-layouts');
-const { initAPI } = require('./src/routes/api')
+const { initAPI } = require('./routes/api')
 var morgan = require('morgan')
 
 APP.use(expressLayouts);
