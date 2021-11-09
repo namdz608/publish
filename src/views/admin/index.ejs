@@ -1,0 +1,63 @@
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(let i = 0; i < abc.length; i++) { %>
+            <tr>
+                <td>
+                    <%= abc[i].id %>
+                </td>
+                <td>
+                    <%= abc[i].name %>
+                </td>
+                <td>
+                    <%= abc[i].email %>
+                </td>
+                <td><a class="btn btn-primary" href="/index/edit/<%= abc[i].id %>">EDit</a></td>
+                <td><a class="btn btn-primary" href="/index/delete/<%= abc[i].id %>">Delete</a></td>
+            </tr>
+            <% } %>
+</table>
+<br><br>
+<form method="post" action="index/get" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="text" class="form-control" name="txtName" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Email</label>
+        <input type="text" class="form-control" name="txtEmail" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Age</label>
+        <input type="text" class="form-control" name="txtAge" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Address</label>
+        <input type="text" class="form-control" name="txtAddress" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<form method="post" action="index/image" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="exampleInputPassword1">Address</label>
+        <input type="file" name="file">
+    </div>
+    <button type="submit" class="btn btn-primary">up</button>
+</form>
+<br>
+<br>
+<form method="post" action="index/multiple" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="exampleInputPassword1">Address</label>
+        <input type="file" name="mulFile" multiple>
+    </div>
+    <button type="submit" class="btn btn-primary">up</button>
+</form>
